@@ -45,12 +45,12 @@ public class RuleEngineBuilder {
 			builder.add(ResourceFactory.newFileResource(spreadsheet), ResourceType.DTABLE, decisionTableConfiguration);
 
 			KnowledgeBuilderErrors errors = builder.getErrors();
-	        if (errors.size() > 0) {
-	            for (KnowledgeBuilderError error: errors) {
-	                System.err.println(error);
-	            }
-	            throw new IllegalArgumentException("Error while loading the spreadsheet " + spreadsheet);
-	        }
+			if (errors.size() > 0) {
+				for (KnowledgeBuilderError error: errors) {
+					System.err.println(error);
+				}
+				throw new IllegalArgumentException("Error while loading the spreadsheet " + spreadsheet);
+			}
 		}
 
 		knowledgeBase = builder.newKnowledgeBase();
