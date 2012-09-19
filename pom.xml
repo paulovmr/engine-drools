@@ -1,0 +1,24 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com</groupId>
+	<artifactId>engine-drools</artifactId>
+	<version>1.0.0</version>
+	<name>Rule Engine based on Drools example</name>
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>RuleEngine</module>
+		<module>CreditLimitExample</module>
+	</modules>
+
+	<developers>
+		<developer>
+			<id>paulovmr</id>
+			<name>Paulo Martins</name>
+			<email>paulovmr@gmail.com</email>
+			<timezone>-3</timezone>
+		</developer>
+	</developers>
+
+</project>
