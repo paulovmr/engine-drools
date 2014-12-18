@@ -22,6 +22,10 @@ import org.drools.io.ResourceFactory;
 
 public class RuleEngineBuilder {
 
+	public static void main(String[] args) throws FileNotFoundException {
+		loadRules(new RuleEngineConfiguration("/tmp/spreadsheets/", "/tmp/serializedKnowledgeBase/", "serializedKnowledgeBase.ser", false));
+	}
+	
 	public static synchronized KnowledgeBase loadRules(RuleEngineConfiguration configuration) {
 
 		KnowledgeBase knowledgeBase = null;
@@ -55,9 +59,7 @@ public class RuleEngineBuilder {
 
 		knowledgeBase = builder.newKnowledgeBase();
 
-		if (configuration.mustPersistKnowledgeBase()) {
-			persistKnowledgeBase(knowledgeBase, configuration.getSerializedKnowledgeBasePath(), configuration.getSerializedKnowledgeBaseFile());
-		}
+		persistKnowledgeBase(knowledgeBase, configuration.getSerializedKnowledgeBasePath(), configuration.getSerializedKnowledgeBaseFile());
 
 		return knowledgeBase;
 	}
@@ -72,8 +74,8 @@ public class RuleEngineBuilder {
 		try {
 			FileInputStream fileInputStream = new FileInputStream(serializedKnowledgeBase);
 			ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-			KnowledgeBase knowledgeBase = (KnowledgeBase) objectInputStream.readObject();
 
+			KnowledgeBase knowledgeBase = (KnowledgeBase) objectInputStream.readObject();
 			return knowledgeBase;
 		} catch (FileNotFoundException e) {
 			serializedKnowledgeBase.delete();
@@ -98,7 +100,6 @@ public class RuleEngineBuilder {
 		try {
 			FileOutputStream fileOutput = new FileOutputStream(serializedKnowledgeBase);
 			ObjectOutputStream objectOutput = new ObjectOutputStream(fileOutput);
-
 			objectOutput.writeObject(knowledgeBase);
 			objectOutput.flush();
 			fileOutput.flush();

@@ -7,6 +7,7 @@ import com.ruleengine.RuleEngineConfiguration;
 public class CreditLimiteChecker {
 
 	// TODO: point the right spreadsheets directory
+//	private static final String spreadsheetsPath = CreditLimiteChecker.class.getClassLoader().getResource("com/creditlimit").getPath();
 	private static final String spreadsheetsPath = "/tmp/spreadsheets/";
 
 	private static final String serializedKnowledgeBasePath = "/tmp/serializedKnowledgeBase/";
