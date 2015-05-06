@@ -29,22 +29,22 @@
 		<dependency>
 			<groupId>org.drools</groupId>
 			<artifactId>drools-core</artifactId>
-			<version>6.1.0.Final</version>
+			<version>6.2.0.CR4</version>
 		</dependency>
 		<dependency>
 			<groupId>org.drools</groupId>
 			<artifactId>drools-compiler</artifactId>
-			<version>6.1.0.Final</version>
+			<version>6.2.0.CR4</version>
 		</dependency>
 		<dependency>
 			<groupId>org.drools</groupId>
 			<artifactId>drools-decisiontables</artifactId>
-			<version>6.1.0.Final</version>
+			<version>6.2.0.CR4</version>
 		</dependency>
 		<dependency>
 			<groupId>org.drools</groupId>
 			<artifactId>knowledge-api</artifactId>
-			<version>6.1.0.Final</version>
+			<version>6.2.0.CR4</version>
 		</dependency>
 			<!--<dependency>
 				<groupId>org.mvel</groupId>
