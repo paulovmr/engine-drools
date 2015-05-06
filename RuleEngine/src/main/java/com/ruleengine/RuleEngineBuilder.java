@@ -14,6 +14,7 @@ import org.drools.KnowledgeBase;
 import org.drools.builder.DecisionTableConfiguration;
 import org.drools.builder.DecisionTableInputType;
 import org.drools.builder.KnowledgeBuilder;
+import org.drools.builder.KnowledgeBuilderConfiguration;
 import org.drools.builder.KnowledgeBuilderError;
 import org.drools.builder.KnowledgeBuilderErrors;
 import org.drools.builder.KnowledgeBuilderFactory;
@@ -41,7 +42,10 @@ public class RuleEngineBuilder {
 		DecisionTableConfiguration decisionTableConfiguration = KnowledgeBuilderFactory.newDecisionTableConfiguration();
 		decisionTableConfiguration.setInputType(DecisionTableInputType.XLS);
 
-		KnowledgeBuilder builder = KnowledgeBuilderFactory.newKnowledgeBuilder();
+		KnowledgeBuilderConfiguration kconfiguration = KnowledgeBuilderFactory.newKnowledgeBuilderConfiguration();
+		kconfiguration.setProperty("drools.dialect.mvel.strict", "false");
+		kconfiguration.setProperty("drools.ruleEngine", "phreak");
+		KnowledgeBuilder builder = KnowledgeBuilderFactory.newKnowledgeBuilder(kconfiguration);
 
 		List<String> spreadsheets = searchSpreadsheets(configuration.getSpreadsheetsPath());
 
